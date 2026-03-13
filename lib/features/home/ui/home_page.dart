@@ -10,6 +10,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'City Mart',
+          style: TextStyle(color: Colors.white, fontWeight: .w600),
+        ),
+        backgroundColor: Colors.teal,
+      ),
+    );
   }
 }
