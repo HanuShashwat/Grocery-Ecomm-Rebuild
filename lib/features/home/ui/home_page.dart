@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'City Mart',
+          'Grocery App',
           style: TextStyle(color: Colors.white, fontWeight: .w600),
         ),
         backgroundColor: Colors.teal,
