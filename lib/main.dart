@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_ecomm_rebuild/features/home/ui/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,6 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
   }
 }
