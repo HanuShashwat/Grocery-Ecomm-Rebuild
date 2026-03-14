@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grocery_ecomm_rebuild/features/cart/ui/cart_page.dart';
+import 'package:grocery_ecomm_rebuild/features/wishlist/ui/wishlist_page.dart';
 
 import '../bloc/home_bloc.dart';
 
@@ -19,7 +21,19 @@ class _HomePageState extends State<HomePage> {
       bloc: homeBloc,
       listenWhen: (previous, current) => current is HomeActionState,
       buildWhen: (previous, current) => current is! HomeActionState,
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is HomeNavigateToWishlistState) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WishlistPage()),
+          );
+        } else if (state is HomeNavigateToCartState) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CartPage()),
+          );
+        }
+      },
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
