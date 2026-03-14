@@ -17,8 +17,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
       bloc: homeBloc,
-      listenWhen: (previous, current) {},
-      buildWhen: (previous, current) {},
+      // listenWhen: (previous, current) {},
+      // buildWhen: (previous, current) {},
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
@@ -30,11 +30,15 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Colors.teal,
             actions: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  homeBloc.add(HomeNavigateToWishlistEvent());
+                },
                 icon: Icon(Icons.favorite_border_outlined, color: Colors.white),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  homeBloc.add(HomeNavigateToCartEvent());
+                },
                 icon: Icon(Icons.shopping_bag_outlined, color: Colors.white),
               ),
             ],

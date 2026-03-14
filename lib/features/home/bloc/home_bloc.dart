@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -6,8 +8,17 @@ part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(HomeInitial()) {
-    on<HomeEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<HomeNavigateToCartEvent>(homeNavigateToCartEvent);
+    on<HomeNavigateToWishlistEvent>(homeNavigateToWishlistEvent);
   }
+
+  FutureOr<void> homeNavigateToCartEvent(
+    HomeNavigateToCartEvent event,
+    Emitter<HomeState> emit,
+  ) {}
+
+  FutureOr<void> homeNavigateToWishlistEvent(
+    HomeNavigateToWishlistEvent event,
+    Emitter<HomeState> emit,
+  ) {}
 }
