@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/home_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,16 +11,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final HomeBloc homeBloc = HomeBloc();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Grocery App',
-          style: TextStyle(color: Colors.white, fontWeight: .w600),
-        ),
-        backgroundColor: Colors.teal,
-      ),
+    return BlocConsumer<HomeBloc, HomeState>(
+      bloc: homeBloc,
+      listenWhen: (previous, current) {},
+      buildWhen: (previous, current) {},
+      listener: (context, state) {},
+      builder: (context, state) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(
+              'Grocery App',
+              style: TextStyle(color: Colors.white, fontWeight: .w600),
+            ),
+            backgroundColor: Colors.teal,
+          ),
+        );
+      },
     );
   }
 }
