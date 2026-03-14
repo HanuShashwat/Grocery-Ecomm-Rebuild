@@ -28,6 +28,16 @@ class _HomePageState extends State<HomePage> {
               style: TextStyle(color: Colors.white, fontWeight: .w600),
             ),
             backgroundColor: Colors.teal,
+            actions: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.favorite_border_outlined, color: Colors.white),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.shopping_bag_outlined, color: Colors.white),
+              ),
+            ],
           ),
         );
       },
