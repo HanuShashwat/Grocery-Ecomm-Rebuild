@@ -13,6 +13,8 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
+        iconTheme: IconThemeData(color: Colors.white),
+        titleSpacing: -4,
         title: Text(
           'Cart',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
